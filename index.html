@@ -764,5 +764,28 @@ document.body.addEventListener('click', () => {
 }, { once:true });
 
 </script>
+    <script>
+
+function openFullscreen() {
+
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    }
+
+    else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    }
+
+}
+
+document.body.addEventListener('click', () => {
+
+    openFullscreen();
+
+}, { once:true });
+
+</script>
 </body>
 </html>
