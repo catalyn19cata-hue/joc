@@ -26,10 +26,18 @@ body{
 
     font-family:Arial, sans-serif;
 
-    background:url('images/background.jpg');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+    background:
+linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55)
+),
+url('images/grass.jpg');
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
 
     position:relative;
 }
@@ -63,20 +71,27 @@ body::before{
 }
 
 .title{
+
     text-align:center;
+
+    font-size:42px;
+
+    font-family:'Orbitron', sans-serif;
+
+    font-weight:900;
+
     color:white;
 
-    font-size:60px;
-    font-weight:bold;
+    letter-spacing:4px;
 
     text-shadow:
     0 0 10px #fff,
     0 0 20px #ff00ff,
-    0 0 40px #ff00ff;
-
-    margin-bottom:30px;
+    0 0 40px #00e5ff,
+    0 0 60px #ff00ff;
 
     animation:pulse 2s infinite;
+
 }
 
 @keyframes pulse{
@@ -137,35 +152,65 @@ body::before{
 
 }
 .track{
+
     position:relative;
 
-   flex:1;
+    flex:1;
+
     height:80px;
 
     border-radius:25px;
 
     overflow:hidden;
 
-    border:3px solid rgba(255,255,255,0.3);
+    border:3px solid rgba(255,255,255,0.25);
 
-    backdrop-filter:blur(6px);
+    background:
+
+    repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.05) 80px,
+        transparent 80px,
+        transparent 160px
+    ),
+
+    linear-gradient(
+        180deg,
+        #5b3a1e 0%,
+        #7a4b24 50%,
+        #4a2d15 100%
+    );
+
+    box-shadow:
+    0 0 20px rgba(255,170,0,0.25),
+    inset 0 0 25px rgba(0,0,0,0.7);
+
+}
+
+    .track::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:10px;
 
     background:
     repeating-linear-gradient(
         90deg,
-        #222 0px,
-        #222 40px,
-        #333 40px,
-        #333 80px
+        #00ff66,
+        #00cc55 10px,
+        #00aa44 20px
     );
 
-    animation:moveTrack 1s linear infinite;
+    opacity:.7;
 
-    box-shadow:
-    0 0 15px rgba(255,255,255,0.2),
-    inset 0 0 20px rgba(0,0,0,0.8);
 }
-
 @keyframes moveTrack{
 
     from{
