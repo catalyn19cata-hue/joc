@@ -173,14 +173,23 @@ body::before{
     z-index:10;
 }
 
-.horse img{
-    width:120px;
+.horse{
+    position:absolute;
+
+    left:0;
+    top:15px;
+
+    transition:left .25s linear;
+
+    z-index:10;
+
+    font-size:90px;
 
     filter:
     drop-shadow(0 0 15px gold)
     drop-shadow(0 0 25px orange);
 
-    animation:horseBounce .4s infinite alternate;
+    animation:horseRun .25s infinite alternate;
 }
 
 @keyframes horseBounce{
