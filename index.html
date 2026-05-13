@@ -192,14 +192,27 @@ body::before{
     animation:horseRun .25s infinite alternate;
 }
 
-@keyframes horseBounce{
+@keyframes horseRun{
 
-    from{
-        transform:translateY(0px);
+    0%{
+        transform:
+        translateY(0px)
+        rotate(-3deg)
+        scale(1);
     }
 
-    to{
-        transform:translateY(-6px);
+    50%{
+        transform:
+        translateY(-8px)
+        rotate(2deg)
+        scale(1.03);
+    }
+
+    100%{
+        transform:
+        translateY(0px)
+        rotate(-2deg)
+        scale(1);
     }
 
 }
