@@ -398,20 +398,23 @@ body::before{
 <div class="title">
 🏆 CURSA TIKTOK 🏆
 </div>
+<div id="leaderboard">
 
-    <div id="leaderboard">
+    <div class="leader">
+        🌹 <span id="laps1">Ilie Bolojan - 0 ture</span>
+    </div>
 
-<div class="leader">
-🥇 <span id="firstPlace">ROMANIA - 0</span>
-</div>
+    <div class="leader">
+        🎮 <span id="laps2">Nicușor Dan - 0 ture</span>
+    </div>
 
-<div class="leader">
-🥈 <span id="secondPlace">ITALY - 0</span>
-</div>
+    <div class="leader">
+        🎵 <span id="laps3">George Simion - 0 ture</span>
+    </div>
 
-<div class="leader">
-🥉 <span id="thirdPlace">FRANCE - 0</span>
-</div>
+    <div class="leader">
+        ☕ <span id="laps4">Călin Georgescu - 0 ture</span>
+    </div>
 
 </div>
 <!-- ROMANIA -->
@@ -575,17 +578,17 @@ function checkWinner(data){
 }
 function updateLeaderboard(){
 
-    const sorted = Object.entries(scores)
-    .sort((a,b)=>b[1]-a[1]);
+    document.getElementById('laps1').innerHTML =
+    'Ilie Bolojan - ' + scores.track1 + ' ture';
 
-    document.getElementById('firstPlace').innerHTML =
-    sorted[0][0].toUpperCase() + ' - ' + sorted[0][1];
+    document.getElementById('laps2').innerHTML =
+    'Nicușor Dan - ' + scores.track2 + ' ture';
 
-    document.getElementById('secondPlace').innerHTML =
-    sorted[1][0].toUpperCase() + ' - ' + sorted[1][1];
+    document.getElementById('laps3').innerHTML =
+    'George Simion - ' + scores.track3 + ' ture';
 
-    document.getElementById('thirdPlace').innerHTML =
-    sorted[2][0].toUpperCase() + ' - ' + sorted[2][1];
+    document.getElementById('laps4').innerHTML =
+    'Călin Georgescu - ' + scores.track4 + ' ture';
 
 }
 </script>
