@@ -814,5 +814,30 @@ document.body.addEventListener(
 );
 
 </script>
+    <script>
+
+function enableFullscreen() {
+
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+
+        elem.requestFullscreen();
+
+    } else if (elem.webkitRequestFullscreen) {
+
+        elem.webkitRequestFullscreen();
+
+    }
+
+}
+
+document.body.addEventListener(
+    'click',
+    enableFullscreen,
+    { once:true }
+);
+
+</script>
 </body>
 </html>
