@@ -752,6 +752,67 @@ function updateLeaderboard(){
 
 }
 </script>
+<script>
 
+let audioStarted = false;
+let audioCtx;
+
+function startGallop() {
+
+    if(audioStarted) return;
+
+    audioStarted = true;
+
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function hoof() {
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+
+        osc.frequency.setValueAtTime(
+            50,
+            audioCtx.currentTime
+        );
+
+        gain.gain.setValueAtTime(
+            0.12,
+            audioCtx.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioCtx.currentTime + 0.08
+        );
+
+        osc.connect(gain);
+
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+
+        osc.stop(audioCtx.currentTime + 0.08);
+
+    }
+
+    setInterval(() => {
+
+        hoof();
+
+        setTimeout(hoof, 120);
+
+    }, 420);
+
+}
+
+document.body.addEventListener(
+    'click',
+    startGallop,
+    { once:true }
+);
+
+</script>
 </body>
 </html>
