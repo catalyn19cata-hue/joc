@@ -216,15 +216,36 @@ body::before{
 
     position:absolute;
 
-    left:80px;
+    left:85px;
     top:50%;
 
     transform:translateY(-50%);
 
-    color:white;
+    font-family:'Trebuchet MS', 'Segoe UI', sans-serif;
 
-    font-size:28px;
-    font-weight:bold;
+    font-size:20px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    background:linear-gradient(
+        90deg,
+        #ffe600,
+        #ff9900,
+        #ff3c00
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 8px rgba(255,255,255,0.4),
+    0 0 15px rgba(255,150,0,0.8),
+    0 0 25px rgba(255,100,0,0.7);
+
+    z-index:20;
 
 }
 .giftIcon{
