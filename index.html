@@ -379,15 +379,6 @@ Ilie Bolojan
     <div class="horse" id="track4Horse">
 <img src="horse.gif">
 </div>
-    <div class="horse" id="track5Horse">
-<img src="horse.gif">
-</div>
-    <div class="horse" id="track6Horse">
-<img src="horse.gif">
-</div>
-    <div class="horse" id="track7Horse">
-<img src="horse.gif">
-</div>
 
 </div>
 
@@ -403,7 +394,7 @@ Ilie Bolojan
 Nicușor Dan
 </div>
 
-<div class="horse" id="italyHorse">
+<div class="horse" id="track2Horse">
 <img src="horse.gif">
 </div>
 
@@ -421,7 +412,7 @@ Nicușor Dan
 George Simion
 </div>
 
-<div class="horse" id="franceHorse">
+<div class="horse" id="track3Horce">
 <img src="horse.gif">
 </div>
 
@@ -438,52 +429,7 @@ George Simion
 Călin Georgescu
 </div>
 
-<div class="horse" id="germanyHorse">
-<img src="horse.gif">
-</div>
-
-</div>
-<div class="track">
-
-<div class="finish"></div>
-
-<div class="label">🐼 PANDA</div>
-
-<div class="banner">
-Sorin Grindeanu
-</div>
-
-<div class="horse" id="track5Horse">
-<img src="horse.gif">
-</div>
-
-</div>
-    <div class="track">
-
-<div class="finish"></div>
-
-<div class="label">🎤 MIC</div>
-
-<div class="banner">
-Diana Șoșoacă
-</div>
-
-<div class="horse" id="track6Horse">
-<img src="horse.gif">
-</div>
-
-</div>
-   <div class="track">
-
-<div class="finish"></div>
-
-<div class="label">❤️ HEART</div>
-
-<div class="banner">
-Traian Basescu
-</div>
-
-<div class="horse" id="track7Horse">
+<div class="horse" id="track4Horse">
 <img src="horse.gif">
 </div>
 
@@ -501,10 +447,7 @@ const horses = {
     track1:document.getElementById('track1Horse'),
     track2:document.getElementById('track2Horse'),
     track3:document.getElementById('track3Horse'),
-    track4:document.getElementById('track4Horse'),
-    track5:document.getElementById('track5Horse'),
-    track6:document.getElementById('track6Horse'),
-    track7:document.getElementById('track7Horse')
+    track4:document.getElementById('track4Horse')
 
 };
 const scores = {
@@ -512,18 +455,15 @@ const scores = {
     track1:0,
     track2:0,
     track3:0,
-    track4:0,
-    track5:0,
-    track6:0,
-    track7:0
+    track4:0
 
 };
 socket.on('updateRace', data => {
 
-    horses.romania.style.left = data.romania + 'px';
-    horses.italy.style.left = data.italy + 'px';
-    horses.france.style.left = data.france + 'px';
-    horses.germany.style.left = data.germany + 'px';
+horses.track1.style.left = data.track1 + 'px';
+horses.track2.style.left = data.track2 + 'px';
+horses.track3.style.left = data.track3 + 'px';
+horses.track4.style.left = data.track4 + 'px';
 
     checkWinner(data);
 
