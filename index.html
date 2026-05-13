@@ -250,22 +250,44 @@ body::before{
 
 }
 .giftIcon{
+.raceRow{
 
-    position:absolute;
+    display:flex;
 
-    left:10px;
-    top:18px;
+    align-items:center;
 
-    width:40px;
+    gap:15px;
 
-    text-align:center;
+    width:100%;
 
-    font-size:38px;
+}
 
-    z-index:30;
+.giftOutside{
 
-    filter:
-    drop-shadow(0 0 10px gold);
+    min-width:60px;
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    background:rgba(0,0,0,0.45);
+
+    border:2px solid rgba(255,255,255,0.2);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(5px);
+
+    box-shadow:
+    0 0 10px rgba(255,215,0,0.5);
+
+    flex-shrink:0;
 
 }
 /* RUNNING TEXT */
@@ -395,81 +417,107 @@ body::before{
 </div>
 <!-- ROMANIA -->
 
-<div class="track">
+<!-- TRACK 1 -->
 
-<div class="finish"></div>
-<div class="giftIcon">
-🌹
-</div>
-<div class="label">Ilie Bolojan</div>
+<div class="raceRow">
 
-<div class="banner">
-Ilie Bolojan
-</div>
+    <div class="giftOutside">
+        🌹
+    </div>
 
-<div class="horse" id="track1Horse">
-<img src="horse.gif">
-</div>
+    <div class="track">
 
-</div>
+        <div class="finish"></div>
 
-<!-- ITALY -->
+        <div class="label">Ilie Bolojan</div>
 
-<div class="track">
+        <div class="banner">
+            Ilie Bolojan
+        </div>
 
-<div class="finish"></div>
-<div class="giftIcon">
-🎮
-</div>
-<div class="label">Nicușor Dan</div>
+        <div class="horse" id="track1Horse">
+            <img src="horse.gif">
+        </div>
 
-<div class="banner">
-Nicușor Dan
-</div>
-
-<div class="horse" id="track2Horse">
-<img src="horse.gif">
-</div>
+    </div>
 
 </div>
 
-<!-- FRANCE -->
+<!-- TRACK 2 -->
 
-<div class="track">
+<div class="raceRow">
 
-<div class="finish"></div>
-<div class="giftIcon">
-🎵
-</div>
-<div class="label">George Simion</div>
+    <div class="giftOutside">
+        🎮
+    </div>
 
-<div class="banner">
-George Simion
-</div>
+    <div class="track">
 
-<div class="horse" id="track3Horse">
-<img src="horse.gif">
-</div>
+        <div class="finish"></div>
 
-</div>
+        <div class="label">Nicușor Dan</div>
 
-<!-- GERMANY -->
+        <div class="banner">
+            Nicușor Dan
+        </div>
 
-<div class="track">
+        <div class="horse" id="track2Horse">
+            <img src="horse.gif">
+        </div>
 
-<div class="finish"></div>
-    <div class="giftIcon">
-☕
-</div>
-<div class="label">Călin Georgescu</div>
+    </div>
 
-<div class="banner">
-Călin Georgescu
 </div>
 
-<div class="horse" id="track4Horse">
-<img src="horse.gif">
+<!-- TRACK 3 -->
+
+<div class="raceRow">
+
+    <div class="giftOutside">
+        🎵
+    </div>
+
+    <div class="track">
+
+        <div class="finish"></div>
+
+        <div class="label">George Simion</div>
+
+        <div class="banner">
+            George Simion
+        </div>
+
+        <div class="horse" id="track3Horse">
+            <img src="horse.gif">
+        </div>
+
+    </div>
+
 </div>
+
+<!-- TRACK 4 -->
+
+<div class="raceRow">
+
+    <div class="giftOutside">
+        ☕
+    </div>
+
+    <div class="track">
+
+        <div class="finish"></div>
+
+        <div class="label">Călin Georgescu</div>
+
+        <div class="banner">
+            Călin Georgescu
+        </div>
+
+        <div class="horse" id="track4Horse">
+            <img src="horse.gif">
+        </div>
+
+    </div>
 
 </div> 
 </div>
