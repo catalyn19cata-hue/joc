@@ -559,9 +559,14 @@ horses.track4.style.left = data.track4 + 'px';
 
 function checkWinner(data){
 
+    const trackWidth =
+    document.querySelector('.track').offsetWidth;
+
+    const finishLine = trackWidth - 120;
+
     for(const horse in data){
 
-        if(data[horse] >= 1400){
+        if(data[horse] >= finishLine){
 
             scores[horse]++;
 
