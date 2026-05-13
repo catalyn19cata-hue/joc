@@ -93,7 +93,37 @@ body::before{
     }
 
 }
+#leaderboard{
 
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+}
+
+.leader{
+
+    background:rgba(0,0,0,0.5);
+
+    border:2px solid gold;
+
+    padding:10px 20px;
+
+    border-radius:15px;
+
+    color:white;
+
+    font-size:24px;
+    font-weight:bold;
+
+    box-shadow:
+    0 0 10px gold;
+}
 /* TRACK */
 
 .track{
@@ -307,9 +337,24 @@ body::before{
 <div class="container">
 
 <div class="title">
-🏆 TIKTOK LIVE HORSE RACE 🏆
+🏆 CURSA TIKTOK 🏆
 </div>
 
+    <div id="leaderboard">
+
+<div class="leader">
+🥇 <span id="firstPlace">ROMANIA - 0</span>
+</div>
+
+<div class="leader">
+🥈 <span id="secondPlace">ITALY - 0</span>
+</div>
+
+<div class="leader">
+🥉 <span id="thirdPlace">FRANCE - 0</span>
+</div>
+
+</div>
 <!-- ROMANIA -->
 
 <div class="track">
@@ -404,7 +449,14 @@ const horses = {
     germany:document.getElementById('germanyHorse')
 
 };
+const scores = {
 
+    romania:0,
+    italy:0,
+    france:0,
+    germany:0
+
+};
 socket.on('updateRace', data => {
 
     horses.romania.style.left = data.romania + 'px';
@@ -422,23 +474,34 @@ function checkWinner(data){
 
         if(data[horse] >= 1400){
 
-            document.getElementById('winnerPopup').style.display='flex';
+            scores[horse]++;
 
-            document.getElementById('winnerText').innerHTML =
-            horse.toUpperCase() + ' WINS 🏆';
+            data[horse] = 0;
 
-            setTimeout(()=>{
+            horses[horse].style.left = '0px';
 
-                location.reload();
-
-            },5000);
+            updateLeaderboard();
 
         }
 
     }
 
 }
+function updateLeaderboard(){
 
+    const sorted = Object.entries(scores)
+    .sort((a,b)=>b[1]-a[1]);
+
+    document.getElementById('firstPlace').innerHTML =
+    sorted[0][0].toUpperCase() + ' - ' + sorted[0][1];
+
+    document.getElementById('secondPlace').innerHTML =
+    sorted[1][0].toUpperCase() + ' - ' + sorted[1][1];
+
+    document.getElementById('thirdPlace').innerHTML =
+    sorted[2][0].toUpperCase() + ' - ' + sorted[2][1];
+
+}
 </script>
 
 </body>
